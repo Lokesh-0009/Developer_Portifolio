@@ -142,3 +142,64 @@ body {
   }
 }
 
+/* ============================================================
+   Accessibility — Focus-visible ring
+   Provides a visible focus indicator for keyboard navigation.
+   Elements with .no-focus-ring class are excluded.
+   ============================================================ */
+*:focus-visible {
+  outline: 2px solid #4F9DFF;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.no-focus-ring:focus-visible {
+  outline: none;
+}
+
+/* ============================================================
+   Accessibility — Reduced motion preferences
+   Respects users who prefer reduced motion by disabling
+   animations and transitions site-wide.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-blink,
+  .animate-float-slow,
+  .animate-float-medium,
+  .animate-pulse {
+    animation: none !important;
+  }
+}
+
+/* ============================================================
+   Accessibility — Skip navigation link
+   Hidden off-screen by default, slides into view on focus
+   to allow keyboard users to bypass navigation.
+   ============================================================ */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999;
+  padding: 12px 24px;
+  background: #4F9DFF;
+  color: #050816;
+  font-weight: 700;
+  border-radius: 0 0 8px 8px;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+

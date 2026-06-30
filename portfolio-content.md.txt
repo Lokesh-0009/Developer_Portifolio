@@ -1,0 +1,31 @@
+# Hero
+
+Name:
+Rowtu Lokesh
+
+Title:
+Java Backend Developer
+
+Subtitle:
+Building scalable backend systems with Java, Spring Boot and AI.
+
+CTA
+
+View Projects
+
+Download Resume
+
+---
+# About
+
+Software Engineering Fresher...
+
+---
+# Skills
+
+Core Java
+Spring Boot
+REST API
+React
+SQL
+...
