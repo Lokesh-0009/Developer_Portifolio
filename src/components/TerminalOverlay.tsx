@@ -8,7 +8,7 @@ const COMMANDS_HELP = {
   help: 'Show list of available commands',
   about: 'Learn more about Lokesh',
   skills: 'Display technical skill matrix',
-  projects: 'Summarise featured coding projects',
+  projects: 'Summarize featured coding projects',
   contact: 'Show contact details & social channels',
   github: 'Get Lokesh\'s GitHub details',
   resume: 'Open Lokesh\'s Resume PDF',
@@ -130,7 +130,7 @@ export default function TerminalOverlay() {
       case 'projects':
         newHistory.push(
           'FEATURED PROJECTS:',
-          '  1. PrescriptoAI - AI Medical Assistant (OCR, NLP Parsing, Contradiction Detection)',
+          '  1. PrescriptoAI - AI Medical Assistant (OCR, NLP Parsing, Contraindication Detection)',
           '  2. Developer Portfolio - Dark themed Interactive Terminal Workspace'
         );
         break;

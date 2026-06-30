@@ -52,6 +52,28 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setIsOpen(false);
+    
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+    if (element) {
+      setTimeout(() => {
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight : 70;
+        
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - headerHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }, 100);
+    }
+  };
+
   const resumeLink = "/Rowtu_Lokesh_Resume.pdf";
   const githubLink = "https://github.com/Lokesh-0009";
 
@@ -68,7 +90,11 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="text-xl font-bold tracking-wider font-mono text-text-main flex items-center gap-1.5 group">
+        <a 
+          href="#home" 
+          onClick={(e) => handleScrollTo(e, '#home')}
+          className="text-xl font-bold tracking-wider font-mono text-text-main flex items-center gap-1.5 group"
+        >
           <span className="text-accent">&#60;</span>
           <span>Lokesh</span>
           <span className="text-accent-sec">/&#62;</span>
@@ -80,6 +106,7 @@ export default function Navbar() {
             <a
               key={item.name}
               href={item.href}
+              onClick={(e) => handleScrollTo(e, item.href)}
               className="text-sm font-medium text-text-muted hover:text-text-main transition-colors duration-200"
             >
               {item.name}
@@ -197,7 +224,7 @@ export default function Navbar() {
                 <a
                   key={item.name}
                   href={item.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => handleScrollTo(e, item.href)}
                   className="text-base font-medium text-text-muted hover:text-text-main py-1"
                 >
                   {item.name}

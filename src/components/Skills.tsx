@@ -42,13 +42,14 @@ export default function Skills() {
     setIsTyping(true);
     setShowContent(false);
     
-    const commandText = `cat ${activeTab}_skills.json`;
+    const commandText = `cd ${activeTab}_skills`;
     let charIdx = 0;
     setTypedCommand('');
 
     const typingInterval = setInterval(() => {
       if (charIdx < commandText.length) {
-        setTypedCommand((prev) => prev + commandText[charIdx]);
+        const char = commandText[charIdx];
+        setTypedCommand((prev) => prev + char);
         charIdx++;
       } else {
         clearInterval(typingInterval);
@@ -127,10 +128,16 @@ export default function Skills() {
                   transition={{ duration: 0.2 }}
                   className="space-y-5"
                 >
+                  {/* Next Prompt Line */}
+                  <div className="flex items-center text-accent">
+                    <span className="text-success-green mr-1">lokesh@workspace:~/skills/{activeTab}_skills$</span>
+                    <span className="text-text-main">cat skills.json</span>
+                  </div>
+
                   <div className="text-text-muted text-[10px] md:text-xs">
                     {`{`}
                     <br />
-                    <span className="pl-4">"category": "{activeTab}",</span>
+                    <span className="pl-4">"category": "{activeTab}_skills",</span>
                     <br />
                     <span className="pl-4">"status": "active",</span>
                     <br />

@@ -30,9 +30,9 @@ const PROJECTS = [
     image: '/prescripto_ai.png',
     tech: ['Python', 'OCR', 'NLP', 'Flask', 'SQL', 'REST API'],
     features: [
-      { icon: Cpu, label: 'OCR & NLP', text: 'Digitises prescriptions, extracting drug names, dosages, and patient details.' },
+      { icon: Cpu, label: 'OCR & NLP', text: 'Digitizes prescriptions, extracting drug names, dosages, and patient details.' },
       { icon: Layers, label: 'SQL DB Integration', text: 'Stores complete patient records and historical prescription data.' },
-      { icon: ShieldAlert, label: 'Dosage Risk Detection', text: 'Analyses prescription metrics to detect contradiction and dose safety.' }
+      { icon: ShieldAlert, label: 'Dosage Risk Detection', text: 'Analyzes prescription metrics to detect contraindications and dose safety.' }
     ],
     github: 'https://github.com/Lokesh-0009/PrescriptoAI',
     demo: '#',
@@ -46,7 +46,7 @@ const PROJECTS = [
     features: [
       { icon: Layout, label: 'Responsive Design', text: 'Adapts seamlessly to mobile, tablet, and desktop viewports.' },
       { icon: Cpu, label: 'Interactive Console', text: 'Features a command line emulator Easter Egg (Press J).' },
-      { icon: Layers, label: 'Modern UI & Theme', text: 'Utilises Lokesh\'s signature dark theme, glows, and animations.' }
+      { icon: Layers, label: 'Modern UI & Theme', text: 'Utilizes Lokesh\'s signature dark theme, glows, and animations.' }
     ],
     github: 'https://github.com/Lokesh-0009',
     demo: '#',

@@ -329,7 +329,7 @@ export const projects: Project[] = [
       {
         icon: Cpu,
         label: 'OCR & NLP',
-        text: 'Digitises prescriptions, extracting drug names, dosages, and patient details.',
+        text: 'Digitizes prescriptions, extracting drug names, dosages, and patient details.',
       },
       {
         icon: Layers,
@@ -339,7 +339,7 @@ export const projects: Project[] = [
       {
         icon: ShieldAlert,
         label: 'Dosage Risk Detection',
-        text: 'Analyses prescription metrics to detect contradiction and dose safety.',
+        text: 'Analyzes prescription metrics to detect contraindications and dose safety.',
       },
     ],
     github: 'https://github.com/Lokesh-0009/PrescriptoAI',
@@ -374,7 +374,7 @@ export const projects: Project[] = [
       {
         icon: Layers,
         label: 'Modern UI & Theme',
-        text: "Utilises Lokesh's signature dark theme, glows, and animations.",
+        text: "Utilizes Lokesh's signature dark theme, glows, and animations.",
       },
     ],
     github: 'https://github.com/Lokesh-0009',
@@ -504,7 +504,7 @@ export const terminalHelpCommands: TerminalCommands = {
   help: 'Show list of available commands',
   about: 'Learn more about Lokesh',
   skills: 'Display technical skill matrix',
-  projects: 'Summarise featured coding projects',
+  projects: 'Summarize featured coding projects',
   contact: 'Show contact details & social channels',
   github: "Get Lokesh's GitHub details",
   resume: "Open Lokesh's Resume PDF",
@@ -535,7 +535,7 @@ export const terminalResponses: TerminalResponse[] = [
     command: 'projects',
     output: [
       'FEATURED PROJECTS:',
-      '  1. PrescriptoAI - AI Medical Assistant (OCR, NLP Parsing, Contradiction Detection)',
+      '  1. PrescriptoAI - AI Medical Assistant (OCR, NLP Parsing, Contraindication Detection)',
       '  2. Developer Portfolio - Dark themed Interactive Terminal Workspace',
     ],
   },
