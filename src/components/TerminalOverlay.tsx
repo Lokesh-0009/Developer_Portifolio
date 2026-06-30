@@ -11,7 +11,7 @@ const COMMANDS_HELP = {
   projects: 'Summarise featured coding projects',
   contact: 'Show contact details & social channels',
   github: 'Get Lokesh\'s GitHub details',
-  resume: 'Open Lokesh\'s Google Docs resume',
+  resume: 'Open Lokesh\'s Resume PDF',
   clear: 'Clear terminal screen',
   exit: 'Close developer terminal mode',
 };
@@ -37,7 +37,7 @@ export default function TerminalOverlay() {
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalEndRef = useRef<HTMLDivElement>(null);
 
-  const resumeLink = "https://docs.google.com/document/d/1iJ5yTmvZoj2KsSkNLS_7kVYsudmTLs0Z/edit?usp=sharing&ouid=113295431589261029173&rtpof=true&sd=true";
+  const resumeLink = "/Rowtu_Lokesh_Resume.pdf";
 
   // Watch key events for 'J', Escape, and Konami Code
   useEffect(() => {
@@ -150,7 +150,7 @@ export default function TerminalOverlay() {
         window.open('https://github.com/Lokesh-0009', '_blank');
         break;
       case 'resume':
-        newHistory.push('Opening Google Drive Resume...');
+        newHistory.push('Opening Resume PDF...');
         window.open(resumeLink, '_blank');
         break;
       case 'clear':

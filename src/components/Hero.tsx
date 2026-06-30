@@ -52,7 +52,7 @@ export default function Hero() {
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, titleIdx, typingSpeed]);
 
-  const resumeLink = "https://docs.google.com/document/d/1iJ5yTmvZoj2KsSkNLS_7kVYsudmTLs0Z/edit?usp=sharing&ouid=113295431589261029173&rtpof=true&sd=true";
+  const resumeLink = "/Rowtu_Lokesh_Resume.pdf";
 
   return (
     <section id="home" className="relative min-h-[90vh] flex items-center justify-center py-12 md:py-20 overflow-hidden">
@@ -151,8 +151,7 @@ export default function Hero() {
             </a>
             <a
               href={resumeLink}
-              target="_blank"
-              rel="noopener noreferrer"
+              download="Rowtu_Lokesh_Resume.pdf"
               className="flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-border-custom hover:border-accent-sec bg-secondary-bg/50 hover:bg-secondary-bg text-text-muted hover:text-text-main font-semibold transition-all duration-300"
             >
               <Download size={16} />

@@ -109,7 +109,7 @@ export default function Contact() {
     }
   };
 
-  const resumeLink = "https://docs.google.com/document/d/1iJ5yTmvZoj2KsSkNLS_7kVYsudmTLs0Z/edit?usp=sharing&ouid=113295431589261029173&rtpof=true&sd=true";
+  const resumeLink = "/Rowtu_Lokesh_Resume.pdf";
   const githubLink = "https://github.com/Lokesh-0009";
 
   return (
@@ -247,7 +247,7 @@ export default function Contact() {
                 <div>
                   <span className="block text-[10px] uppercase font-mono text-text-muted">Resume</span>
                   <span className="text-sm font-semibold text-text-main group-hover:text-accent transition-colors">
-                    Google Drive Document
+                    PDF Document
                   </span>
                 </div>
               </a>

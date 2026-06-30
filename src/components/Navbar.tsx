@@ -52,7 +52,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const resumeLink = "https://docs.google.com/document/d/1iJ5yTmvZoj2KsSkNLS_7kVYsudmTLs0Z/edit?usp=sharing&ouid=113295431589261029173&rtpof=true&sd=true";
+  const resumeLink = "/Rowtu_Lokesh_Resume.pdf";
   const githubLink = "https://github.com/Lokesh-0009";
 
   return (
