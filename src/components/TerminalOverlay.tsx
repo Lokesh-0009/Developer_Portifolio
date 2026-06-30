@@ -183,7 +183,7 @@ export default function TerminalOverlay() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/90 backdrop-blur-sm z-[99999] flex items-center justify-center p-4 md:p-6"
+          className="fixed inset-0 bg-primary-bg/90 backdrop-blur-sm z-[99999] flex items-center justify-center p-4 md:p-6"
           onClick={() => inputRef.current?.focus()}
         >
           <motion.div

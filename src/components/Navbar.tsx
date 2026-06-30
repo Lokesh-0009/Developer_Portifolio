@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, FileText } from 'lucide-react';
+import { Menu, X, FileText, Sun, Moon } from 'lucide-react';
+import { useTheme } from './ThemeProvider';
 
 
 const GithubIcon = ({ size = 15 }: { size?: number }) => (
@@ -36,6 +37,7 @@ const NAV_ITEMS = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,7 +88,38 @@ export default function Navbar() {
         </nav>
 
         {/* Buttons */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-3">
+          {/* Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            className="relative p-2 rounded-full border border-border-custom hover:border-accent bg-secondary-bg/50 text-text-muted hover:text-accent transition-all duration-300 overflow-hidden"
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              {theme === 'dark' ? (
+                <motion.div
+                  key="sun"
+                  initial={{ y: -20, opacity: 0, rotate: -90 }}
+                  animate={{ y: 0, opacity: 1, rotate: 0 }}
+                  exit={{ y: 20, opacity: 0, rotate: 90 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Sun size={15} />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="moon"
+                  initial={{ y: -20, opacity: 0, rotate: 90 }}
+                  animate={{ y: 0, opacity: 1, rotate: 0 }}
+                  exit={{ y: 20, opacity: 0, rotate: -90 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Moon size={15} />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </button>
+
           <a
             href={githubLink}
             target="_blank"
@@ -107,14 +140,46 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden text-text-muted hover:text-text-main p-1"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile: Theme Toggle + Menu Button */}
+        <div className="flex lg:hidden items-center gap-2">
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full border border-border-custom bg-secondary-bg/50 text-text-muted hover:text-accent transition-all duration-300"
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              {theme === 'dark' ? (
+                <motion.div
+                  key="sun-mobile"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Sun size={18} />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="moon-mobile"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Moon size={18} />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </button>
+
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-text-muted hover:text-text-main p-1"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}

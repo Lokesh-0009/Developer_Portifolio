@@ -61,13 +61,13 @@ export default function CustomCursor() {
     <>
       {/* Inner Dot */}
       <motion.div
-        className="fixed top-0 left-0 w-2.5 h-2.5 bg-accent rounded-full pointer-events-none z-[10001] mix-blend-screen"
+        className="fixed top-0 left-0 w-2.5 h-2.5 bg-accent rounded-full pointer-events-none z-[10001] mix-blend-difference"
         style={{ x: mouseX, y: mouseY, translateX: '-50%', translateY: '-50%' }}
       />
 
       {/* Outer Ring */}
       <motion.div
-        className="fixed top-0 left-0 rounded-full pointer-events-none z-[10000] flex items-center justify-center font-mono text-xs text-accent select-none mix-blend-screen border"
+        className="fixed top-0 left-0 rounded-full pointer-events-none z-[10000] flex items-center justify-center font-mono text-xs text-accent select-none mix-blend-difference border"
         style={{
           x: ringX,
           y: ringY,

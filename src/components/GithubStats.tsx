@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { GitFork, Star, Folder, Users, BookOpen, Terminal } from 'lucide-react';
+import { useTheme } from './ThemeProvider';
 
 interface GitHubProfile {
   public_repos: number;
@@ -25,6 +26,7 @@ export default function GithubStats() {
   const [profile, setProfile] = useState<GitHubProfile | null>(null);
   const [repos, setRepos] = useState<Repository[]>([]);
   const [loading, setLoading] = useState(true);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -67,12 +69,22 @@ export default function GithubStats() {
   });
 
   const getGlowColor = (val: number) => {
+    if (theme === 'light') {
+      switch (val) {
+        case 0: return 'bg-[#ebedf0]';
+        case 1: return 'bg-[#9be9a8]';
+        case 2: return 'bg-[#40c463]';
+        case 3: return 'bg-[#30a14e]';
+        case 4: return 'bg-[#216e39] animate-pulse';
+        default: return 'bg-[#ebedf0]';
+      }
+    }
     switch (val) {
-      case 0: return 'bg-[#161b22]'; // Dark grey
-      case 1: return 'bg-[#0e4429]'; // Light green
-      case 2: return 'bg-[#006d32]'; // Mid green
-      case 3: return 'bg-[#26a641]'; // Bright green
-      case 4: return 'bg-[#39d353] animate-pulse'; // Glowing green
+      case 0: return 'bg-[#161b22]';
+      case 1: return 'bg-[#0e4429]';
+      case 2: return 'bg-[#006d32]';
+      case 3: return 'bg-[#26a641]';
+      case 4: return 'bg-[#39d353] animate-pulse';
       default: return 'bg-[#161b22]';
     }
   };
@@ -193,11 +205,11 @@ export default function GithubStats() {
                 </h4>
                 <div className="flex items-center gap-1 font-mono text-[10px] text-text-muted">
                   <span>Less</span>
-                  <div className="w-2.5 h-2.5 bg-[#161b22] rounded-sm" />
-                  <div className="w-2.5 h-2.5 bg-[#0e4429] rounded-sm" />
-                  <div className="w-2.5 h-2.5 bg-[#006d32] rounded-sm" />
-                  <div className="w-2.5 h-2.5 bg-[#26a641] rounded-sm" />
-                  <div className="w-2.5 h-2.5 bg-[#39d353] rounded-sm" />
+                  <div className={`w-2.5 h-2.5 rounded-sm ${theme === 'light' ? 'bg-[#ebedf0]' : 'bg-[#161b22]'}`} />
+                  <div className={`w-2.5 h-2.5 rounded-sm ${theme === 'light' ? 'bg-[#9be9a8]' : 'bg-[#0e4429]'}`} />
+                  <div className={`w-2.5 h-2.5 rounded-sm ${theme === 'light' ? 'bg-[#40c463]' : 'bg-[#006d32]'}`} />
+                  <div className={`w-2.5 h-2.5 rounded-sm ${theme === 'light' ? 'bg-[#30a14e]' : 'bg-[#26a641]'}`} />
+                  <div className={`w-2.5 h-2.5 rounded-sm ${theme === 'light' ? 'bg-[#216e39]' : 'bg-[#39d353]'}`} />
                   <span>More</span>
                 </div>
               </div>

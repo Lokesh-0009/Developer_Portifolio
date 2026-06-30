@@ -132,7 +132,7 @@ export default function Projects() {
             >
               <TiltCard className="h-full w-full rounded-xl bg-secondary-bg/25 border border-border-custom hover:border-accent/40 hover:shadow-[0_0_50px_rgba(79,157,255,0.06)] overflow-hidden group transition-all duration-300">
                 {/* Project Image Panel */}
-                <div className="relative h-56 md:h-72 w-full overflow-hidden border-b border-border-custom bg-black/40">
+                <div className="relative h-56 md:h-72 w-full overflow-hidden border-b border-border-custom bg-primary-bg/40">
                   <Image
                     src={project.image}
                     alt={project.title}

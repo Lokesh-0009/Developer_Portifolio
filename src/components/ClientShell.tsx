@@ -6,6 +6,7 @@ import CustomCursor from './CustomCursor';
 import AnimatedBackground from './AnimatedBackground';
 import Navbar from './Navbar';
 import TerminalOverlay from './TerminalOverlay';
+import ThemeProvider from './ThemeProvider';
 
 export default function ClientShell({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
@@ -25,7 +26,7 @@ export default function ClientShell({ children }: { children: React.ReactNode })
   }, []);
 
   return (
-    <>
+    <ThemeProvider>
       <div className="scroll-progress no-print" />
       <CustomCursor />
       <AnimatedBackground />
@@ -43,7 +44,7 @@ export default function ClientShell({ children }: { children: React.ReactNode })
           </div>
         </>
       )}
-    </>
+    </ThemeProvider>
   );
 }
 

@@ -7,7 +7,7 @@ import type { ReactNode } from 'react';
  */
 interface TerminalWindowProps {
   /** Title shown in the header bar centre. @default 'terminal' */
-  title?: string;
+  title?: ReactNode;
   /** Content rendered inside the terminal body area. */
   children: ReactNode;
   /** Additional CSS classes applied to the outermost wrapper. */
